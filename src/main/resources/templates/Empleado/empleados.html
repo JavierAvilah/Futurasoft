@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html html lang="en" xmlns:th="http//www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{master}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+    <div layout:fragment="content">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+        <h1 class="h3 mb-0 text-gray-800">Empleados</h1>
+        <a href="/empresa/crear" class="btn btn-primary">Crear nueva empleado</a>
+    </div>
+    <div class="row">
+        <table class="table table-bordered dataTable">
+            <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Correo</th>
+                <th>Empresa</th>
+                <th>Rol</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each = "emp : ${empleados}">
+                <td th:text="${emp.nombreEmpleado}"></td>
+                <td th:text="${emp.correo}"></td>
+                <td th:text="${emp.empresa.nombre}"></td>
+                <td th:text="${emp.rol}"></td>
+                <td>
+                    <a href="" class="btn btn-primary">Editar</a>
+                    <a href="" class="btn btn-danger">Eliminar</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>

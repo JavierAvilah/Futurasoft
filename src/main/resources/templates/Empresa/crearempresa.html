@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http//www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{master}">
+<head>
+  <meta charset="UTF-8">
+  <title>Empresa</title>
+</head>
+<body>
+
+<div layout:fragment="content">
+
+    <form action="/empresa/crearempresa" method="post">
+      <div class="mt-8 container text-center">
+        <span class="input-group-text" id="addon-wrapping">Nuevo Empresa</span>
+        <label>Escriba nombre de la empresa</label>
+        <input name="nombre" type="text" class="form-control" placeholder="Nombre">
+        <label>Escriba la direccion</label>
+        <input name="direccion" type="text" class="form-control" placeholder="Direccion">
+        <label>Escriba el telefono</label>
+        <input name="telefono" type="text" class="form-control" placeholder="Telefono">
+        <label>Escriba el nit</label>
+        <input name="nit" type="text" class="form-control" placeholder="Nit">
+      </div>
+        <div class="mt-8 container text-center">
+          <button type= "submit" class="btn btn-primary">Guardar</button>
+          <a href="/empresa/empresas" class="btn btn-danger">Cancelar</a>
+        </div>
+    </form>
+
+</div>
+
+
+</body>
+</html>

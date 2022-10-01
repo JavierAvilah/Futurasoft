@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http//www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{master}">
+<head>
+    <meta charset="UTF-8">
+    <title>Empresa</title>
+</head>
+<body>
+
+  <div layout:fragment="content">
+    <div class="d-sm-flex align-items-center justify-content-between mb-4">
+      <h1 class="h3 mb-0 text-gray-800">Empresas</h1>
+      <a href="/empresa/crear" class="btn btn-primary">Crear nueva empresa</a>
+
+    </div>
+    <div class="row">
+        <table class="table table-bordered dataTable">
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Nit</th>
+                    <th>Direccion</th>
+                    <th>Telefono</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each = "emp : ${empresas}">
+                    <td th:text="${emp.nombre}"></td>
+                    <td th:text="${emp.nit}"></td>
+                    <td th:text="${emp.direccion}"></td>
+                    <td th:text="${emp.telefono}"></td>
+                    <td>
+                        <a th:href="@{/empresa/editar/{postid}(postid=${emp.id})}" class="btn btn-primary">Editar</a>
+                        <a th:href="@{/empresa/delete/{postid}(postid=${emp.id})}" class="btn btn-danger">Eliminar</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+  </div>
+
+
+</body>
+</html>

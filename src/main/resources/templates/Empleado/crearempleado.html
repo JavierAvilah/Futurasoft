@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http//www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" layout:decorate="~{master}">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <div layout:fragment="content">
+
+        <form action="/empleado/crearempleado" method="post">
+            <div class="mt-8 container text-center">
+                <span class="input-group-text" id="addon-wrapping">Nuevo Empleado</span>
+                <label>Escriba nombre del empleado</label>
+                <input name="nombreEmpleado" type="text" class="form-control" placeholder="Nombre">
+                <label>Escriba el correo</label>
+                <input name="correo" type="text" class="form-control" placeholder="Correo">
+                <label>Escriba el id de la empresa</label>
+                <input name="empresa" type="number" class="form-control" placeholder="Id empresa">
+                <label>Escriba el rol</label>
+                <input name="rol" type="text" class="form-control" placeholder="Rol">
+            </div>
+            <div class="mt-8 container text-center">
+                <button type= "submit" class="btn btn-primary">Guardar</button>
+                <a href="/empleado/empleados" class="btn btn-danger">Cancelar</a>
+            </div>
+        </form>
+
+    </div>
+</body>
+</html>
